@@ -13,7 +13,7 @@
 10. [ERD](#erd)
 11. [프로젝트 파일 구조](#프로젝트-파일-구조)
 12. [기술적 의사결정](#기술적-의사결정)
-13. [Trouble Shooting](#trouble-shooting)
+13. [트러블 슈팅](#트러블-슈팅)
     
 ## 프로젝트 소개
 중고 거래 플랫폼으로 개인 간의 중고 거래를 더욱 쉽게 접근할 수 있게 매칭해주는 게시판 형태의 서비스입니다. 
@@ -66,18 +66,18 @@
 <img src="https://img.shields.io/badge/intellij idea-000000?style=for-the-badge&logo=intellijidea&logoColor=white">
 
 ### ✔️ Framework
-### Backend : <img src="https://img.shields.io/badge/spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white"> <img src="https://img.shields.io/badge/springboot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white"> <img src="https://img.shields.io/badge/spring security-6DB33F?style=for-the-badge&logo=springsecurity&logoColor=white">
-### Frontend : <img src="https://img.shields.io/badge/Vue.js-4FC08D?style=for-the-badge&logo=Vue.js&logoColor=white"> <img src="https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=Bootstrap&logoColor=white">
+#### Backend : <img src="https://img.shields.io/badge/spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white"> <img src="https://img.shields.io/badge/springboot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white"> <img src="https://img.shields.io/badge/spring security-6DB33F?style=for-the-badge&logo=springsecurity&logoColor=white">
+#### Frontend : <img src="https://img.shields.io/badge/Vue.js-4FC08D?style=for-the-badge&logo=Vue.js&logoColor=white"> <img src="https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=Bootstrap&logoColor=white">
 
 ### ✔️ Deploy
-<img src="https://img.shields.io/badge/amazon ec2-FF9900?style=for-the-badge&logo=amazonec2&logoColor=white">
-
+#### Backend : <img src="https://img.shields.io/badge/amazon ec2-FF9900?style=for-the-badge&logo=amazonec2&logoColor=white">
+#### Frontend : <img src="https://img.shields.io/badge/vercel-000000?style=for-the-badge&logo=vercel&logoColor=white">
 ### ✔️ Local DBMS
 <img src="https://img.shields.io/badge/postgresql-4169E1?style=for-the-badge&logo=postgresql&logoColor=white"> <img src="https://img.shields.io/badge/redis-DC382D?style=for-the-badge&logo=redis&logoColor=white">
 
 ### ✔️ Cloud DBMS
-<img src="https://img.shields.io/badge/amazon rds-527FFF?style=for-the-badge&logo=amazonrds&logoColor=white">
-
+#### Backend : <img src="https://img.shields.io/badge/amazon rds-527FFF?style=for-the-badge&logo=amazonrds&logoColor=white">
+#### Frontend : <img src="https://img.shields.io/badge/amazon s3-569A31?style=for-the-badge&logo=amazons3&logoColor=white"> 
 
 ## 서비스 구조
 ![BuySell 시스템 아키텍처 (1)](https://github.com/HwangSeungHyeon/buysell/assets/57141923/4cc8fd5b-a6d7-4353-8ced-a85e98725e40)
@@ -138,7 +138,7 @@
 
 
 ## 프로젝트 파일 구조
-
+#### Backend
 ```
 buysell
     ├─domain
@@ -195,87 +195,231 @@ buysell
         │  └─jwt
         └─swagger
 ```
+#### Frontend
+```
+├─assets
+│  ├─css
+│  ├─fonts
+│  ├─img
+│  │  ├─examples
+│  │  ├─illustrations
+│  │  ├─logos
+│  │  │  ├─gray-logos
+│  │  │  ├─medium-logos
+│  │  │  ├─small-logos
+│  │  │  └─white-logos
+│  │  ├─shapes
+│  │  └─small-logos
+│  ├─js
+│  │  ├─core
+│  │  └─plugins
+│  │      └─presentation-page
+│  └─scss
+│      └─material-kit
+│          ├─bootstrap
+│          │  ├─forms
+│          │  ├─helpers
+│          │  ├─mixins
+│          │  ├─utilities
+│          │  └─vendor
+│          ├─cards
+│          ├─custom
+│          ├─forms
+│          ├─mixins
+│          ├─plugins
+│          │  └─free
+│          └─variables
+├─components
+├─examples
+│  ├─cards
+│  │  ├─blogCards
+│  │  ├─counterCards
+│  │  ├─infoCards
+│  │  ├─reviewCards
+│  │  ├─rotatingCards
+│  │  └─teamCards
+│  ├─footers
+│  ├─navbars
+│  └─tables
+├─layouts
+│  └─sections
+│      ├─attention-catchers
+│      │  ├─alerts
+│      │  │  └─components
+│      │  ├─modals
+│      │  │  └─components
+│      │  └─tooltips-popovers
+│      │      └─components
+│      ├─components
+│      ├─elements
+│      │  ├─avatars
+│      │  │  └─components
+│      │  ├─badges
+│      │  │  └─components
+│      │  ├─breadcrumbs
+│      │  ├─button-groups
+│      │  │  └─components
+│      │  ├─buttons
+│      │  │  └─components
+│      │  ├─dropdowns
+│      │  │  └─components
+│      │  ├─progress-bars
+│      │  │  └─components
+│      │  ├─toggles
+│      │  │  └─components
+│      │  └─typography
+│      │      └─components
+│      ├─input-areas
+│      │  ├─forms
+│      │  │  └─components
+│      │  └─inputs
+│      │      └─components
+│      ├─navigation
+│      │  ├─nav-tabs
+│      │  │  └─components
+│      │  ├─navbars
+│      │  │  └─components
+│      │  └─pagination
+│      │      └─components
+│      └─page-sections
+│          ├─features
+│          │  └─components
+│          └─page-headers
+│              └─components
+├─router
+├─stores
+├─utils
+└─views
+    ├─LandingPages
+    │  ├─AboutUs
+    │  │  └─Sections
+    │  ├─Author
+    │  │  └─Sections
+    │  ├─components
+    │  ├─ContactUs
+    │  ├─posts
+    │  └─SignIn
+    ├─MySales
+    ├─Pay
+    │  └─Components
+    ├─Presentation
+    │  ├─Components
+    │  └─Sections
+    │      └─Data
+    └─WishList
+```
 
 ## 기술적 의사결정
 
 <details>
-<summary> EC2 </summary>
-<div markdown="1">
-    - [도입 이유]
-    - [문제상황]
-    - [해결방안]
-    - [의사 결정]
-</div>
-</details>
-
-<details>
 <summary> RDS </summary>
 <div markdown="1">
-    - [도입 이유]
-      - 비교적 빠르게 인스턴트를 생성하고 구성할 수 있음
-      - 필요에 따라 스토리지 용량을 확장할 수 있어 확장성이 높음
-      - IAM으로 접근권한을 세밀하게 관리할 수 있음
-      - 다양한 DB엔진 지원
-    - [문제상황]
-      - AWS 서비스에 대한 사용법을 익히는데 시간이 필요함
-      - 다양한 옵션들의 과금정책이 복잡해 현재 상황에서 예상 비용을 계산하기 어려움
-    - [해결방안]
-      - AWS 관련 자료는 다른 Cloud DB에 비해 방대한 양의 참고자료가 있기에 대부분의 문제는 검색으로 해결 가능
-      - AWS 비용 계산기를 사용해 사전에 예상비용을 계산하고 필요에 따라 리소스를 조정해야함
-    - [의사 결정]
-      - AWS 강의와 자료검색들을 통해 학습시간을 최대한 단축
-      - 비용계산기로 대략적인 금액 계산 후 배포기간과 정해진 예산 이내로 리소스 조정
-      - 검색 시 제공되는 자료의 양이 많은 Amazon RDS 채택
+[도입 이유]</br>
+      - 비교적 빠르게 인스턴트를 생성하고 구성할 수 있음</br>
+      - 필요에 따라 스토리지 용량을 확장할 수 있어 확장성이 높음</br>
+      - IAM으로 접근권한을 세밀하게 관리할 수 있음</br>
+      - 다양한 DB엔진 지원</br>
+[문제상황]</br>
+      - AWS 서비스에 대한 사용법을 익히는데 시간이 필요함</br>
+      - 다양한 옵션들의 과금정책이 복잡해 현재 상황에서 예상 비용을 계산하기 어려움</br>
+[해결방안]</br>
+      - AWS 관련 자료는 다른 Cloud DB에 비해 방대한 양의 참고자료가 있기에 대부분의 문제는 검색으로 해결 가능</br>
+      - AWS 비용 계산기를 사용해 사전에 예상비용을 계산하고 필요에 따라 리소스를 조정해야함</br>
+[의사 결정]</br>
+      - AWS 강의와 자료검색들을 통해 학습시간을 최대한 단축</br>
+      - 비용계산기로 대략적인 금액 계산 후 배포기간과 정해진 예산 이내로 리소스 조정</br>
+      - 검색 시 제공되는 자료의 양이 많은 Amazon RDS 채택</br>
 </div>
 </details>
 
 <details>
 <summary> ElastiCache </summary>
 <div markdown="1">
-    - [도입 이유]
-      - 회원 가입 시 실제로 존재하는 이메일인지 확인 하기 위함
-    - [문제상황]
-      - 이메일 인증 번호 저장 위치에 대한 결정 필요
-    - [해결방안]
-      - Redis와 AWS RDS를 후보로 삼아 비교하고 평가하기로 함
-    - [의사 결정]
-      - 인증 번호는 DB에 자주 접근하기 때문에, 사용자가 늘어날 경우 DB에 부담을 줄 수 있음
-      - 이메일 인증코드는 임시 데이터이기 때문에 임시데이터를 관리하는 측면에서 Redis를 사용하는것이 유리
-      - 빠른 속도와 자동 만료기능, 확장성에서 Redis가 우수하다고 판단해 채택
+[도입 이유]</br>
+      - 회원 가입 시 실제로 존재하는 이메일인지 확인 하기 위함</br>
+[문제상황]</br>
+      - 이메일 인증 번호 저장 위치에 대한 결정 필요</br>
+[해결방안]</br>
+      - Redis와 AWS RDS를 후보로 삼아 비교하고 평가하기로 함</br>
+[의사 결정]</br>
+      - 인증 번호는 DB에 자주 접근하기 때문에, 사용자가 늘어날 경우 DB에 부담을 줄 수 있음</br>
+      - 이메일 인증코드는 임시 데이터이기 때문에 임시데이터를 관리하는 측면에서 Redis를 사용하는것이 유리</br>
+      - 빠른 속도와 자동 만료기능, 확장성에서 Redis가 우수하다고 판단해 채택</br>
 </div>
 </details>
 
 <details>
 <summary> Security</summary>
 <div markdown="1">
-    - [도입 이유]
-      - 온라인 플랫폼을 운영하는데 있어서 사용자 관리의 정교함이 중요하다 판단됨
-      - 필요한 데이터에 안전하고 빠르게 접근하도록 지원, 동시에 고객 데이터를 효율적으로 관리하는데 도움이 된다고 판단하여 도입함
-    - [문제상황]
-      - 다양한 보안 위험에 노출되어 있기 때문에 공격으로부터 웹 애플리케이션을 보호해야 될 필요가 있음
-      - 사용자 인증 및 세밀한 권한 관리는 구현하기 복잡하여 이를 위한 효율적인 솔루션이 필요함
-    - [해결방안]
-      -  Spring Security를 도입하여 포괄적인 보안 솔루션을 제공 받아 보안 강화 
-      - Spring Security의 다양한 보안 설정으로 애플리케이션의 특정 요구 사항에 맞게 보안 정책을 조정
-    - [의사 결정]
-      - 보안 정책과 관련하여 팀 내에서 충분한 논의를 거치면서 Spring Security의 도입이 애플리케이션에 미치는 영향과 이점을 공유할 수 있어서 spring security 채택
+[도입 이유]</br>
+      - 온라인 플랫폼을 운영하는데 있어서 사용자 관리의 정교함이 중요하다 판단됨</br>
+      - 필요한 데이터에 안전하고 빠르게 접근하도록 지원, 동시에 고객 데이터를 효율적으로 관리하는데 도움이 된다고 판단하여 도입함</br>
+[문제상황]</br>
+      - 다양한 보안 위험에 노출되어 있기 때문에 공격으로부터 웹 애플리케이션을 보호해야 될 필요가 있음</br>
+      - 사용자 인증 및 세밀한 권한 관리는 구현하기 복잡하여 이를 위한 효율적인 솔루션이 필요함</br>
+[해결방안]</br>
+      -  Spring Security를 도입하여 포괄적인 보안 솔루션을 제공 받아 보안 강화 </br>
+      - Spring Security의 다양한 보안 설정으로 애플리케이션의 특정 요구 사항에 맞게 보안 정책을 조정</br>
+[의사 결정]</br>
+      - 보안 정책과 관련하여 팀 내에서 충분한 논의를 거치면서 Spring Security의 도입이 애플리케이션에 미치는 영향과 이점을 공유할 수 있어서 spring security 채택</br>
 </div>
 </details>
 
 <details>
 <summary> CI/CD </summary>
 <div markdown="1">
-    - [도입 이유]
-      - 코드 오류를 초기에 찾고 배포에 걸리는 시간을 줄이기 위함
-    - [문제상황]
-      - CI를 적용하지 않고 수동으로 테스트를 했더니 시간이 많이 소요됨
-      - CD 미적용 시,  서버에 직접 JAR 파일 배포되는 시간이 지연 되어 검토도 지연 됨
-    - [해결방안]
-      - Github Actions를 이용
-      - Jenkins를 이용
-    - [의사 결정]
-      - CI/CD 서버가 내장되어 있어서 CI/CD 서버를 구축할 필요가 없음
-      - Github에 내장되어 있기 때문에 Github와 통합이 쉬움
-      - GitHub와의 자연스러운 연동으로 향상된 생산성을 제공하는 Github Actions를 사용
+[도입 이유]</br>
+      - 코드 오류를 초기에 찾고 배포에 걸리는 시간을 줄이기 위함</br>
+[문제상황]</br>
+      - CI를 적용하지 않고 수동으로 테스트를 했더니 시간이 많이 소요됨</br>
+      - CD 미적용 시,  서버에 직접 JAR 파일 배포되는 시간이 지연 되어 검토도 지연 됨</br>
+[해결방안]</br>
+      - Github Actions를 이용</br>
+      - Jenkins를 이용</br>
+[의사 결정]</br>
+      - CI/CD 서버가 내장되어 있어서 CI/CD 서버를 구축할 필요가 없음</br>
+      - Github에 내장되어 있기 때문에 Github와 통합이 쉬움</br>
+      - GitHub와의 자연스러운 연동으로 향상된 생산성을 제공하는 Github Actions를 사용</br>
 </div>
 </details>
+
+## 트러블 슈팅
+### **🚨문제 배경**
+
+**카카오 소셜로그인 기능 구현 중 발급 받은 엑세스 토큰이 유효하지 않는 문제가 발생했습니다.**
+
+**이메일 값이 NULL로 들어가서 로그인 한 이메일 값과 일치하지 않기 때문입니다.**
+
+### **⌛시도 했던 방법들**
+
+- **구글링을 통해 비슷한 이슈를 해결한 사람이 있는지 조사를 했습니다.**
+- **이메일 값을 가져오는 과정을 알아보기 위해 디버킹 도구를 사용했습니다.**
+
+### **🙌이전 코드와 비교**
+
+**이전 코드는 구글 소셜로그인 이메일 값 가져오는 코드와 같습니다.**
+
+**디버깅을 통해 카카오 소셜로그인은 이메일 값이 들어있는 attribute가 다른 것을 확인했습니다.**
+
+**코드 수정 결과 정상적으로 이메일 값을 가져오는 것을 확인했습니다.**
+
+- **이전 코드**
+
+![스크린샷 2024-05-10 160216.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/c7ff9390-c087-4427-81f4-c6d19a2c879f/c98215bf-9fef-48e6-9718-2d96504178f9/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2024-05-10_160216.png)
+
+- **수정된 코드**
+
+![스크린샷 2024-05-10 160253.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/c7ff9390-c087-4427-81f4-c6d19a2c879f/b7eea3ad-7039-425a-8ef9-5c8b917c86a3/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2024-05-10_160253.png)
+
+### **🌟알게 된 점**
+
+**소셜로그인 플랫폼 마다 이메일 값을 저장하고 있는 경로가 다르다는 것과, 이메일 값이 들어있는 경로를 코드로 작성해야 정상적으로 이메일 값을 가져올 수 있다는 것을 알게 되었습니다.**
+
+![스크린샷 2024-05-10 164516.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/c7ff9390-c087-4427-81f4-c6d19a2c879f/b60e55a0-2161-493d-9480-e7db949702c2/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2024-05-10_164516.png)
+
+**구글 소셜로그인 이메일 값 경로**
+
+![스크린샷 2024-05-10 164620.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/c7ff9390-c087-4427-81f4-c6d19a2c879f/41f5917b-313d-4672-b79d-b34885505c84/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2024-05-10_164620.png)
+
+**카카오 소셜로그인 이메일 값 경로**
+
